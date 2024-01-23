@@ -8,7 +8,9 @@ import PictureGallery from '../components/PictureGallery';
   <Hero
     welcomeText='welomce to my gallery'
     tagline='it sucks'
-    backgroundImage=''
+    backgroundImages={['../assets/placeholders/1920x1080.jpg', '../assets/placeholders/1280x720.jpg', '../assets/placeholders/1200x800.jpg']}
+      slideTime={5000}
+      client:load
   />
   <PictureGallery
     images={[
