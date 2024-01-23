@@ -1,7 +1,18 @@
+import { useInViewport } from 'react-in-viewport';
+import { useRef } from 'react';
+
 const StatsCard: React.FC = () => {
+  const ref = useRef(null);
+  const { inViewport } = useInViewport(ref);
+
+  // TODO: make the animation only run one time
+
   return (
-    <>
-      <div className='flex h-[80vh] flex-col items-center justify-evenly bg-zinc-900 px-32'>
+    <div className='h-[80vh] bg-zinc-900 px-32'>
+      <div
+        ref={ref}
+        className={`flex h-full flex-col items-center justify-evenly ${inViewport ? 'fade-in-up' : ''}`}
+      >
         <h3 className='text-xl'>Hello look at my stats</h3>
         <p>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut cumque
@@ -18,7 +29,7 @@ const StatsCard: React.FC = () => {
           quisquam in.
         </p>
       </div>
-    </>
+    </div>
   );
 };
 
