@@ -1,8 +1,30 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero';
+import { imageConfig } from 'astro:assets';
+import PictureGallery from '../components/PictureGallery';
 ---
 
 <Layout title='gallery' metaDescription='this is my other astro page'>
   <Hero welcomeText='welomce to my gallery' tagline='it sucks' />
+  <PictureGallery
+    images={[
+      { imageRef: 'na', link: '/', title: 'trashcan' },
+      { imageRef: 'na', link: '/', title: 'firehydrant' },
+      { imageRef: 'na', link: '/', title: 'recycling bin' },
+      { imageRef: 'na', link: '/', title: 'compiuet' },
+      { imageRef: 'na', link: '/', title: 'red card' },
+      { imageRef: 'na', link: '/', title: 'blue car' },
+      { imageRef: 'na', link: '/', title: 'grey car' },
+      { imageRef: 'na', link: '/', title: 'white car' },
+      { imageRef: 'na', link: '/', title: 'pink car' },
+      { imageRef: 'na', link: '/', title: 'purple car' },
+      { imageRef: 'na', link: '/', title: ' green car' },
+      { imageRef: 'na', link: '/', title: 'orangecar' },
+      { imageRef: 'na', link: '/', title: 'tall car' },
+      { imageRef: 'na', link: '/', title: 'small car' },
+      { imageRef: 'na', link: '/', title: 'long car' },
+      { imageRef: 'na', link: '/', title: 'short car' },
+    ]}
+  />
 </Layout>
