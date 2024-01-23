@@ -22,10 +22,12 @@ const TextImagecard: React.FC<Props> = ({
         alt={imageAltText}
         className='col-span-2 h-full w-full object-cover'
       />
-      <div className='p-12'>
-        <h3>{title}</h3>
-        <p>{bodyText}</p>
-        <a href={linK}>{linkText}</a>
+      <div className='flex flex-col justify-around p-12 text-center'>
+        <h3 className='text-2xl'>{title}</h3>
+        <p className='text-xl'>{bodyText}</p>
+        <a href={linK} className='text-lg underline underline-offset-4'>
+          {linkText}
+        </a>
       </div>
     </div>
   );
