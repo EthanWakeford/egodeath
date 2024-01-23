@@ -1,7 +1,7 @@
 const StatsCard: React.FC = () => {
   return (
     <>
-      <div className='flex h-[80vh] flex-col items-center justify-evenly bg-zinc-900'>
+      <div className='flex h-[80vh] flex-col items-center justify-evenly bg-zinc-900 px-32'>
         <h3 className='text-xl'>Hello look at my stats</h3>
         <p>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut cumque
