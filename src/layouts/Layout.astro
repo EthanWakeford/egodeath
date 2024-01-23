@@ -1,0 +1,50 @@
+---
+import Header from '../components/Header';
+
+interface Props {
+  title: string;
+  metaDescription: string;
+}
+
+const { title, metaDescription } = Astro.props;
+---
+
+<!doctype html>
+<html lang='en' class='bg-slate-950 font-sans font-light text-white'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='description' content={metaDescription} />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='generator' content={Astro.generator} />
+    <script
+      src='https://kit.fontawesome.com/d1b675ff4f.js'
+      crossorigin='anonymous'></script>
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header
+      title='L.i.b.e.r.a.l. M.e.d.i.a.'
+      navs={['gallery', 'nav two', 'nav three', 'nav four']}
+    />
+    <slot />
+  </body>
+</html>
+
+<!-- custom animation keyframes and other global stuffs -->
+<style is:global>
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20vh);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.75s ease-out;
+  }
+</style>
