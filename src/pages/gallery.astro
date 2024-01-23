@@ -5,7 +5,11 @@ import PictureGallery from '../components/PictureGallery';
 ---
 
 <Layout title='gallery' metaDescription='this is my other astro page'>
-  <Hero welcomeText='welomce to my gallery' tagline='it sucks' />
+  <Hero
+    welcomeText='welomce to my gallery'
+    tagline='it sucks'
+    backgroundImage=''
+  />
   <PictureGallery
     images={[
       { imageRef: 'na', link: '/', title: 'trashcan' },
