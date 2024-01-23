@@ -16,12 +16,18 @@ const TextImagecard: React.FC<Props> = ({
   linkText,
 }) => {
   return (
-    <>
-      <img src={imageLink} alt={imageAltText} />
-      <h3>{title}</h3>
-      <p>{bodyText}</p>
-      <a href={linK}>{linkText}</a>
-    </>
+    <div className='grid h-[50vh] grid-cols-3'>
+      <img
+        src={imageLink}
+        alt={imageAltText}
+        className='col-span-2 h-full w-full object-cover'
+      />
+      <div className='p-12'>
+        <h3>{title}</h3>
+        <p>{bodyText}</p>
+        <a href={linK}>{linkText}</a>
+      </div>
+    </div>
   );
 };
 
