@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero';
 import AboutCard from '../components/AboutCard';
 import StatsCard from '../components/StatsCard';
+import TextImagecard from '../components/TextImageCard';
 ---
 
 <Layout title='Welcome to Astro.' metaDescription='this is my first astro page'>
@@ -19,6 +20,44 @@ import StatsCard from '../components/StatsCard';
       aboutBody='its super cool'
       linkText='Click here to find out'
     />
+    <StatsCard
+      title='Hello Look at my Stats'
+      body=`3. 	Kevin DurantPHX	43
+    4. 	Jayson TatumBOS	39
+    5. 	Dejounte MurrayATL	35
+    Rebounds
+    1. 	Domantas SabonisSAC	21
+    2. 	Luka DoncicDAL	18
+    2. 	Joel EmbiidPHI	18
+    4. 	Giannis AntetokounmpoMIL	17
+    4. 	Nikola VucevicCHI	17
+    Assists
+    1. 	LaMelo BallCHA	13
+    1. 	Luka DoncicDAL	13
+    1. 	Donovan MitchellCLE	13
+    4. 	Anthony EdwardsMIN	11
+    5. 	Giannis AntetokounmpoMIL	10
+    Blocks
+    1. 	Scottie BarnesTOR	6
+    2. 	John KoncharMEM	5
+    2. 	Isaiah StewartDET	5
+    4. 	Brook LopezMIL	4
+    5. 	Alex CarusoCHI	3
+    Steals
+    1. 	Jaren Jackson Jr.MEM	6
+    2. 	Donovan MitchellCLE	4
+    3. 	Giannis AntetokounmpoMIL	3
+    3. 	LaMelo BallCHA	3
+    3. 	Nicolas BatumPHI	3`
+      client:load
+    />
+    <TextImagecard
+      title='title'
+      bodyText='blah blah'
+      imageAltText='cool picture'
+      imageLink='assets/placeholders/1200 x 800.jpg'
+      linK='/'
+      linkText='click me'
+    />
   </main>
-  <StatsCard />
 </Layout>
