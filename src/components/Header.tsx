@@ -12,7 +12,7 @@ const Header: React.FC<HeaderProps> = ({ title, navs }) => {
       <nav className='flex w-auto basis-[60%]  justify-around gap-4 px-32 align-middle'>
         {navs.map((nav) => (
           <span className=''>
-            <a className='hover:text-zinc-700' href={`/${nav}`}>
+            <a className='hover:text-zinc-700' href={`/${nav}`} key={nav}>
               {nav}
             </a>
           </span>
