@@ -10,7 +10,9 @@ import StatsCard from '../components/StatsCard';
     <Hero
       welcomeText='Welcome to Liberal Media'
       tagline='Lorem ipsum dolor sit amet consectetur adipisicing elit.'
-      backgroundImage='../assets/placeholders/1920x1080.jpg'
+      backgroundImages={['../assets/placeholders/1920x1080.jpg', '../assets/placeholders/1280x720.jpg', '../assets/placeholders/1920x1080.jpg', '../assets/placeholders/1280x720.jpg']}
+      slideTime={5000}
+      client:load
     />
     <AboutCard
       aboutTitle='this is where I make a title about some stuff that we do'
