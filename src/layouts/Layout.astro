@@ -10,7 +10,7 @@ const { title, metaDescription } = Astro.props;
 ---
 
 <!doctype html>
-<html lang='en' class='bg-slate-950 font-sans font-light text-white'>
+<html lang='en' class='text-white bg-black font-sans font-light'>
   <head>
     <meta charset='UTF-8' />
     <meta name='description' content={metaDescription} />
@@ -23,10 +23,7 @@ const { title, metaDescription } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <Header
-      title='EgoDeath'
-      navs={['gallery', 'nav two', 'nav three', 'nav four']}
-    />
+    <Header title='EgoDeath' navs={['commercial', 'food', 'events']} />
     <slot />
   </body>
 </html>

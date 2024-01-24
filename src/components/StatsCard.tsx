@@ -14,7 +14,7 @@ const StatsCard: React.FC<Props> = ({ body, title }) => {
   if (inViewport && !shouldAnimate) setShouldAnimate(true);
 
   return (
-    <div className='h-[80vh] bg-zinc-900 px-32'>
+    <div className='h-[80vh] bg-white px-32 text-black'>
       <div
         ref={ref}
         className={`${shouldAnimate ? 'fade-in-up' : 'opacity-0'} flex h-full flex-col items-center justify-evenly`}
