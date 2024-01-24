@@ -14,8 +14,8 @@ const AboutCard: React.FC<AboutCardProps> = ({
       <div className='h-[75vh] bg-neutral-950 dark:bg-white px-[25vw] py-48 text-center'>
         <div className='flex h-[100%] flex-col justify-between'>
           <h2 className='mt-8 text-4xl'>{aboutTitle}</h2>
-          <h3 className='mt-8 text-2xl text-neutral-400'>{aboutBody}</h3>
-          <a className='mt-8 text-2xl text-red-400 underline' href='/'>
+          <h3 className='mt-8 text-2xl text-white'>{aboutBody}</h3>
+          <a className='text-tertiary mt-8 text-2xl underline' href='/'>
             {linkText}
           </a>
         </div>
