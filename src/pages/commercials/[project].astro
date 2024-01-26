@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Hero from '../../components/Hero';
+import ProjectPageInfo from '../../components/ProjectPageInfo';
 
 // read from Firestore
 // turn all entries into possible static routes
@@ -28,5 +29,11 @@ const { testData } = Astro.props;
       '../assets/placeholders/1920x1080.jpg',
       '../assets/placeholders/1280x720.jpg',
     ]}
+  />
+  <ProjectPageInfo
+    description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio commodi perspiciatis asperiores fugiat debitis earum doloremque eaque beatae molestias vitae recusandae quidem laboriosam, sapiente quam qui consequuntur voluptate quisquam? Harum!'
+    title='FAKE'
+    company='ggole'
+    credits={['me', 'clifford']}
   />
 </Layout>
