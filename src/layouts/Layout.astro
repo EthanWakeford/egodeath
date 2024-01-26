@@ -21,16 +21,20 @@ const { title, metaDescription } = Astro.props;
       src='https://kit.fontawesome.com/d1b675ff4f.js'
       crossorigin='anonymous'></script>
     <script>
-      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark')
+      if (
+        localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark');
       } else {
-        document.documentElement.classList.remove('dark')
+        document.documentElement.classList.remove('dark');
       }
-      localStorage.theme = 'light'
-      localStorage.theme = 'dark'
-      localStorage.removeItem('theme')
+      localStorage.theme = 'light';
+      localStorage.theme = 'dark';
+      localStorage.removeItem('theme');
     </script>
-    <title>{title}</title>
+    <title>{title ? `${title}: EgoDeath` : 'EgoDeath'}</title>
   </head>
   <body>
     <Header title='EgoDeath' navs={['commercials', 'food', 'events']} />
