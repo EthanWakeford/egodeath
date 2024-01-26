@@ -1,0 +1,32 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/Hero';
+
+// read from Firestore
+// turn all entries into possible static routes
+// take data and put it into props to use on webpage
+
+export function getStaticPaths() {
+  return [
+    { params: { project: 'clifford' }, props: { testData: 'blahhhh' } },
+    { params: { project: 'rover' } },
+    { params: { project: 'spot' } },
+  ];
+}
+
+const { project } = Astro.params;
+const { testData } = Astro.props;
+---
+
+<Layout metaDescription='blah' title={project}>
+  <Hero
+    tagline={testData}
+    welcomeText={testData}
+    backgroundImages={[
+      '../assets/placeholders/1920x1080.jpg',
+      '../assets/placeholders/1280x720.jpg',
+      '../assets/placeholders/1920x1080.jpg',
+      '../assets/placeholders/1280x720.jpg',
+    ]}
+  />
+</Layout>
