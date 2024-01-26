@@ -5,13 +5,13 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ title, navs }) => {
   return (
-    <header className='absolute top-0 z-50 flex h-32 w-screen flex-row content-between p-2 px-12 pt-12 text-center align-middle'>
-      <div className='basis-[20%]'>
-        <h2 className='text-left text-2xl hover:text-black'>
+    <header className='absolute top-0 z-50 mt-2 flex w-screen justify-between px-4 text-center align-middle lg:mt-4 lg:grid lg:grid-cols-5 lg:px-0'>
+      <div className='lg:col-span-1'>
+        <h2 className='text-center text-2xl hover:text-black'>
           <a href='/'>{title}</a>
         </h2>
       </div>
-      <nav className='flex w-auto basis-[60%]  justify-around gap-4 px-32 align-middle'>
+      <nav className='hidden items-center justify-evenly gap-4 align-middle lg:col-span-3 lg:flex'>
         {navs.map((nav) => (
           <span className=''>
             <a className='hover:text-black' href={`/${nav}`} key={nav}>
@@ -20,11 +20,14 @@ const Header: React.FC<HeaderProps> = ({ title, navs }) => {
           </span>
         ))}
       </nav>
-      <a href='/contact' className='basis-[20%]'>
-        <button className='bg-other rounded-xl px-2 text-2xl hover:text-black'>
-          contact us
-        </button>
-      </a>
+      <div className='hidden lg:col-span-1 lg:block'>
+        <a href='/contact' className=''>
+          <button className='bg-other rounded-xl px-4 py-2  text-xl hover:text-black'>
+            contact us
+          </button>
+        </a>
+      </div>
+      <i className='fa-solid fa-bars cursor-pointer text-2xl hover:text-black lg:hidden'></i>
     </header>
   );
 };
