@@ -18,7 +18,7 @@ const ContactPage: React.FC<Props> = ({
   socials,
 }) => {
   return (
-    <div className='mb-48 mt-64 flex flex-col items-center px-8 text-center'>
+    <div className='mt-32 lg:mb-48 lg:mt-64 flex flex-col items-center px-8 text-center'>
       <h1 className='mb-4 text-2xl lg:text-4xl'>{title}</h1>
       <h2 className='mb-16 lg:text-xl'>{subHeading}</h2>
       <div className='mb-16 grid h-48 grid-cols-2 grid-rows-2  lg:text-xl'>

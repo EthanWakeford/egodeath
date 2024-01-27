@@ -23,14 +23,14 @@ const Footer: React.FC<Props> = ({
         <div>
           <nav className='mb-8 flex flex-col items-center gap-2 lg:flex-row lg:justify-end lg:gap-8'>
             {navs.map((nav) => (
-              <a className='' href={`/${nav.link}`} key={nav.name}>
+              <a className='' href={`${nav.link}`} key={nav.name}>
                 {nav.name}
               </a>
             ))}
           </nav>
           <nav className='mb-8 flex justify-center gap-4 lg:justify-end lg:gap-8'>
             {socials.map((social) => (
-              <a className='text-lg' href={`/${social.link}`} key={social.type}>
+              <a className='text-lg' href={`${social.link}`} key={social.type}>
                 <i className={`fa-brands fa-${social.type} text-2xl`}></i>
               </a>
             ))}

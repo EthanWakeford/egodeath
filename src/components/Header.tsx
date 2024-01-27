@@ -42,7 +42,7 @@ const Header: React.FC<HeaderProps> = ({ title, navs }) => {
         {navs.map((nav) => (
           <a
             className={`text-bold text-base transition duration-300 ease-in-out hover:text-black ${isScrolled ? 'text-black' : 'text-white'}`}
-            href={`/${nav.link}`}
+            href={`${nav.link}`}
             key={nav.name}
           >
             {nav.name}
@@ -61,7 +61,7 @@ const Header: React.FC<HeaderProps> = ({ title, navs }) => {
           {navs.map((nav, index) => (
             <a
               key={index}
-              href={`/${nav.link}`}
+              href={`${nav.link}`}
               className='px-6 py-2 text-base text-black hover:bg-gray-100'
               onClick={() => setIsNavOpen(false)}
             >
