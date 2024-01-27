@@ -62,12 +62,17 @@ const Header: React.FC<HeaderProps> = ({ title, navs }) => {
             <a
               key={index}
               href={`${nav.link}`}
-              className='px-6 py-2 text-base text-black hover:bg-gray-100'
+              className='px-6 py-4 text-base text-black hover:bg-gray-100'
               onClick={() => setIsNavOpen(false)}
             >
               {nav.name}
             </a>
           ))}
+          <a href='/contact' className=''>
+            <button className='my-2 transform rounded-xl bg-other px-4 py-2 text-base transition duration-300 ease-in-out hover:scale-110 hover:bg-tertiary hover:text-black'>
+              CONTACT US
+            </button>
+          </a>
         </nav>
       </div>
       <div className='hidden lg:col-span-1 lg:block'>
