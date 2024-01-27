@@ -15,7 +15,7 @@ const TextImagecard: React.FC<Props> = ({
   bodyText,
   link,
   linkText,
-  reversed,
+  reversed = false,
 }) => {
   return (
     <div className='grid h-[70vh] grid-rows-2 lg:h-[50vh] lg:grid-cols-3 lg:grid-rows-1'>
