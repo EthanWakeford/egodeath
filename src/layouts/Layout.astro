@@ -38,7 +38,15 @@ const { title, metaDescription } = Astro.props;
     <title>{title ? `${title} - EgoDeath` : 'EgoDeath'}</title>
   </head>
   <body>
-    <Header title='EgoDeath' navs={['commercials', 'food', 'events']} client:load/>
+    <Header
+      title='EgoDeath'
+      navs={[
+        { link: '/commercials', name: 'COMMERCIALS' },
+        { link: '/food', name: 'FOOD' },
+        { link: '/events', name: 'EVENTS' },
+      ]}
+      client:load
+    />
     <main>
       <slot />
     </main>

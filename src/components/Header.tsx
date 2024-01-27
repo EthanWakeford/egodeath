@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 interface HeaderProps {
   title: string;
-  navs: string[];
+  navs: { link: string; name: string }[];
 }
 
 const Header: React.FC<HeaderProps> = ({ title, navs }) => {
@@ -30,7 +30,9 @@ const Header: React.FC<HeaderProps> = ({ title, navs }) => {
   };
 
   return (
-    <header className={`fixed top-0 z-50 flex w-screen justify-between bg-white px-4 py-2 text-center align-middle lg:grid lg:grid-cols-5 lg:px-0 lg:py-8 transition-all duration-1000 ${isScrolled ? 'bg-opacity-100' : 'lg:bg-transparent'}`}>
+    <header
+      className={`fixed top-0 z-50 flex w-screen justify-between bg-white px-4 py-2 text-center align-middle transition-all duration-1000 lg:grid lg:grid-cols-5 lg:px-0 lg:py-8 ${isScrolled ? 'bg-opacity-100' : 'lg:bg-transparent'}`}
+    >
       <div className='items-center justify-center align-middle lg:col-span-1 lg:flex'>
         <h2 className='text-center text-2xl text-black hover:text-black lg:text-white'>
           <a href='/'>{title}</a>
@@ -39,11 +41,11 @@ const Header: React.FC<HeaderProps> = ({ title, navs }) => {
       <nav className='hidden items-center justify-center gap-16 align-middle lg:col-span-3 lg:flex'>
         {navs.map((nav) => (
           <a
-            className={`text-bold text-xl transition duration-300 ease-in-out hover:text-black ${isScrolled ? 'text-black' : 'text-white'}`}
-            href={`/${nav}`}
-            key={nav}
+            className={`text-bold text-base transition duration-300 ease-in-out hover:text-black ${isScrolled ? 'text-black' : 'text-white'}`}
+            href={`/${nav.link}`}
+            key={nav.name}
           >
-            {nav}
+            {nav.name}
           </a>
         ))}
       </nav>
@@ -59,19 +61,19 @@ const Header: React.FC<HeaderProps> = ({ title, navs }) => {
           {navs.map((nav, index) => (
             <a
               key={index}
-              href={`/${nav}`}
-              className='px-6 py-2 text-lg text-black hover:bg-gray-100'
+              href={`/${nav.link}`}
+              className='px-6 py-2 text-base text-black hover:bg-gray-100'
               onClick={() => setIsNavOpen(false)}
             >
-              {nav}
+              {nav.name}
             </a>
           ))}
         </nav>
       </div>
       <div className='hidden lg:col-span-1 lg:block'>
         <a href='/contact' className=''>
-          <button className='transform rounded-xl bg-other px-4  py-2 text-xl transition duration-300 ease-in-out hover:scale-110 hover:bg-tertiary hover:text-black'>
-            contact us
+          <button className='transform rounded-xl bg-other px-4  py-2 text-lg transition duration-300 ease-in-out hover:scale-110 hover:bg-tertiary hover:text-black'>
+            CONTACT US
           </button>
         </a>
       </div>
