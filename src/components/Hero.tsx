@@ -7,12 +7,17 @@ interface HeroProps {
   slideTime?: number;
 }
 
-const Hero: React.FC<HeroProps> = ({ welcomeText, tagline, backgroundImages, slideTime = 5000 }) => {
+const Hero: React.FC<HeroProps> = ({
+  welcomeText,
+  tagline,
+  backgroundImages,
+  slideTime = 5000,
+}) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => 
+      setCurrentImageIndex((prevIndex) =>
         prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
       );
     }, slideTime);
@@ -21,11 +26,16 @@ const Hero: React.FC<HeroProps> = ({ welcomeText, tagline, backgroundImages, sli
   }, [backgroundImages.length, slideTime]);
 
   const getImageClasses = (index: number) => {
-    let baseClasses = "absolute top-0 w-full h-full bg-cover bg-center transition-all duration-1000 ease-in-out";
+    let baseClasses =
+      'absolute top-0 w-full h-full bg-cover bg-center transition-all duration-1000 ease-in-out';
     if (index === currentImageIndex) {
       // Current image, sliding in and fading in
       return `${baseClasses} transform translate-x-0 opacity-100`;
-    } else if (index === (currentImageIndex - 1 + backgroundImages.length) % backgroundImages.length) {
+    } else if (
+      index ===
+      (currentImageIndex - 1 + backgroundImages.length) %
+        backgroundImages.length
+    ) {
       // Previous image, sliding out and fading out
       return `${baseClasses} transform invisible opacity-50`;
     } else {
@@ -35,7 +45,7 @@ const Hero: React.FC<HeroProps> = ({ welcomeText, tagline, backgroundImages, sli
   };
 
   return (
-    <div className="relative h-screen overflow-hidden">
+    <div className='h-screen overflow-hidden'>
       {backgroundImages.map((image, index) => (
         <div
           key={image}
@@ -43,10 +53,12 @@ const Hero: React.FC<HeroProps> = ({ welcomeText, tagline, backgroundImages, sli
           style={{ backgroundImage: `url(${image})` }}
         />
       ))}
-      <div className="absolute top-0 left-0 w-full h-full z-10 pl-16 pr-80 pt-96 text-left">
-        <div className="fade-in-up">
-          <h2 className="text-2xl">{welcomeText}</h2>
-          <h1 className="mt-20 text-6xl tracking-widest">{tagline}</h1>
+      <div className='absolute bottom-0 z-10 px-4 pb-16 text-left lg:pb-32 lg:pl-16 lg:pr-64'>
+        <div className='fade-in-up'>
+          <h2 className='text-lg lg:text-2xl'>{welcomeText}</h2>
+          <h1 className='mt-12 text-3xl tracking-widest lg:mt-20 lg:text-5xl'>
+            {tagline}
+          </h1>
         </div>
       </div>
     </div>
@@ -54,4 +66,3 @@ const Hero: React.FC<HeroProps> = ({ welcomeText, tagline, backgroundImages, sli
 };
 
 export default Hero;
-
