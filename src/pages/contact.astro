@@ -1,5 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ContactPage from '../components/ContactPage';
 ---
 
-<Layout metaDescription='contact us' title='Contact Us' />
+<Layout metaDescription='contact us' title='Contact Us'>
+  <ContactPage
+    phone='918-2342434'
+    address='your moms house'
+    names='Richard Song'
+    email='gmail.com'
+    subHeading='START A PROJECT, SCHEDULE A TALK, OR JUST SAY HELLO'
+    title='LETS WORK TOGETHER'
+    socials={[
+      { link: 'https://www.instagram.com/', type: 'instagram' },
+      { link: 'https://www.facebook.com/', type: 'facebook' },
+    ]}
+  />
+</Layout>
