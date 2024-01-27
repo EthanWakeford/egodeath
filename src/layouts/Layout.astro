@@ -34,7 +34,7 @@ const { title, metaDescription } = Astro.props;
       localStorage.theme = 'dark';
       localStorage.removeItem('theme');
     </script>
-    <title>{title ? `${title}: EgoDeath` : 'EgoDeath'}</title>
+    <title>{title ? `${title} - EgoDeath` : 'EgoDeath'}</title>
   </head>
   <body>
     <Header title='EgoDeath' navs={['commercials', 'food', 'events']} />
