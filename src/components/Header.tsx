@@ -34,7 +34,7 @@ const Header: React.FC<HeaderProps> = ({ title, navs }) => {
       className={`fixed top-0 z-50 flex w-screen justify-between bg-white px-4 py-2 text-center align-middle transition-all duration-1000 lg:grid lg:grid-cols-5 lg:px-0 lg:py-8 ${isScrolled ? 'bg-opacity-100' : 'lg:bg-transparent'}`}
     >
       <div className='items-center justify-center align-middle lg:col-span-1 lg:flex'>
-        <h2 className='text-center text-2xl text-black hover:text-black lg:text-white'>
+        <h2 className='text-center text-2xl transition-all duration-300 text-black hover:text-black lg:text-white'>
           <a href='/'>{title}</a>
         </h2>
       </div>

@@ -24,12 +24,12 @@ const TextImagecard: React.FC<Props> = ({
         alt={imageAltText}
         className={`${reversed && 'lg:order-1'}  h-full w-full object-cover lg:col-span-2`}
       />
-      <div className='flex flex-col justify-between px-4 py-8 lg:py-24 text-center lg:col-span-1 lg:px-12'>
+      <div className='flex flex-col justify-between px-4 py-8 text-center lg:col-span-1 lg:px-12 lg:py-24'>
         <h3 className='text-lg lg:text-5xl'>{title}</h3>
         <p className='text-base lg:text-xl'>{bodyText}</p>
         <a
           href={link}
-          className='text-sm underline underline-offset-4 lg:text-lg'
+          className='text-sm underline underline-offset-4 transition-all  duration-300 hover:text-tertiary lg:text-lg'
         >
           {linkText}
         </a>
