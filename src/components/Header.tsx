@@ -48,7 +48,7 @@ const Header: React.FC<HeaderProps> = ({ title, navs }) => {
         ))}
       </nav>
       <i
-        className={`fa-solid cursor-pointer text-black text-2xl transition-transform duration-300 lg:hidden ${isNavOpen ? 'fa-xmark rotate-180 opacity-100' : 'fa-bars rotate-0 opacity-50'}`}
+        className={`fa-solid cursor-pointer text-2xl text-black transition-transform duration-300 lg:hidden ${isNavOpen ? 'fa-xmark rotate-180 opacity-100' : 'fa-bars rotate-0 opacity-50'}`}
         onClick={toggleNav}
       ></i>
 
