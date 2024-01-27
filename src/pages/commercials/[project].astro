@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Hero from '../../components/Hero';
 import ProjectPageInfo from '../../components/ProjectPageInfo';
+import Sidekick from '../../components/Sidekick';
 
 // read from Firestore
 // turn all entries into possible static routes
@@ -20,14 +20,14 @@ const { testData } = Astro.props;
 ---
 
 <Layout metaDescription='blah' title={project}>
-  <Hero
+  <Sidekick
     tagline={testData}
     welcomeText={testData}
     backgroundImages={[
-      'src/assets/placeholders/1920x1080.jpg',
-      'src/assets/placeholders/1280x720.jpg',
-      'src/assets/placeholders/1920x1080.jpg',
-      'src/assets/placeholders/1280x720.jpg',
+      '../src/assets/placeholders/1920x1080.jpg',
+      '../src/assets/placeholders/1280x720.jpg',
+      '../src/assets/placeholders/1920x1080.jpg',
+      '../src/assets/placeholders/1280x720.jpg',
     ]}
   />
   <ProjectPageInfo
