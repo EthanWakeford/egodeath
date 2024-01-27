@@ -10,7 +10,7 @@ const { title, metaDescription } = Astro.props;
 ---
 
 <!doctype html>
-<html lang='en' class='text-white bg-black font-sans font-light'>
+<html lang='en' class='bg-black font-sans font-light text-white'>
   <head>
     <meta charset='UTF-8' />
     <meta name='description' content={metaDescription} />
@@ -46,18 +46,34 @@ const { title, metaDescription } = Astro.props;
 
 <!-- custom animation keyframes and other global stuffs -->
 <style is:global>
-  @keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      transform: translateY(20vh);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+  @tailwind base;
 
-  .fade-in-up {
-    animation: fadeInUp 0.75s ease-out;
+  @layer base {
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20vh);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.75s ease-out;
+    }
+    .card-zoom {
+      @apply relative overflow-hidden;
+    }
+    .card-zoom-image {
+      @apply absolute h-full w-full transform bg-cover bg-center transition-all duration-500 ease-in-out;
+    }
+    .card-zoom-text {
+      @apply absolute transform text-gray-50 transition-all duration-500 ease-in-out;
+    }
+    .zoom-in {
+      @apply scale-[1.25];
+    }
   }
 </style>

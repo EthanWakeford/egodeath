@@ -7,9 +7,18 @@ const PictureGallery: React.FC<Props> = ({ images }) => {
     <ul className='align-center grid grid-cols-1 text-center sm:grid-cols-2'>
       {images.map((image) => (
         <li
-          className={`flex h-32 items-center justify-center bg-[url('${image.imageRef}')] group opacity-50 hover:opacity-100`}
+          className={`card-zoom group flex h-64 items-center justify-center bg-cover bg-center`}
         >
-          <a href={image.link} className='invisible group-hover:visible'>
+          <div
+            className='card-zoom-image hover:zoom-in hover:brightness-50'
+            style={{
+              backgroundImage: `url('${image.imageRef}')`,
+            }}
+          ></div>
+          <a
+            href={image.link}
+            className='z-50 text-xl opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100'
+          >
             {image.title}
           </a>
         </li>
