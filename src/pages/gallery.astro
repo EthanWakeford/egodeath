@@ -2,6 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero';
 import PictureGallery from '../components/PictureGallery';
+
+import smallPicture from '/home/onslow/astro_stuffs/liberal-media/src/assets/placeholders/300 x 250.jpg';
+import mediumPicture from '../src/assets/placeholders/1200x800.jpg';
+import { string } from 'astro/zod';
 ---
 
 <Layout title='gallery' metaDescription='this is my other astro page'>
@@ -20,27 +24,27 @@ import PictureGallery from '../components/PictureGallery';
   <PictureGallery
     images={[
       {
-        imageRef: 'src/assets/placeholders/300 x 250.jpg',
+        imageRef: smallPicture.src,
         link: '/',
         title: 'trashcan',
       },
       {
-        imageRef: 'src/assets/placeholders/300 x 250.jpg',
+        imageRef: smallPicture.src,
         link: '/',
         title: 'firehydrant',
       },
       {
-        imageRef: 'src/assets/placeholders/300 x 250.jpg',
+        imageRef: smallPicture.src,
         link: '/',
         title: 'recycling bin',
       },
       {
-        imageRef: 'src/assets/placeholders/300 x 250.jpg',
+        imageRef: smallPicture.src,
         link: '/',
         title: 'compiuet',
       },
       {
-        imageRef: 'src/assets/placeholders/1200x800.jpg',
+        imageRef: '',
         link: '/',
         title: 'red car',
       },
