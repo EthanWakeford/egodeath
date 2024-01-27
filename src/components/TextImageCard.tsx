@@ -3,7 +3,7 @@ interface Props {
   imageLink: string;
   imageAltText: string;
   bodyText: string;
-  linK: string;
+  link: string;
   linkText: string;
 }
 
@@ -12,7 +12,7 @@ const TextImagecard: React.FC<Props> = ({
   imageLink,
   imageAltText,
   bodyText,
-  linK,
+  link,
   linkText,
 }) => {
   return (
@@ -26,7 +26,7 @@ const TextImagecard: React.FC<Props> = ({
         <h3 className='text-lg lg:text-2xl'>{title}</h3>
         <p className='text-base lg:text-xl'>{bodyText}</p>
         <a
-          href={linK}
+          href={link}
           className='text-sm underline underline-offset-4 lg:text-lg'
         >
           {linkText}

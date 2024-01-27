@@ -38,7 +38,9 @@ const { title, metaDescription } = Astro.props;
   </head>
   <body>
     <Header title='EgoDeath' navs={['commercials', 'food', 'events']} />
-    <slot />
+    <main>
+      <slot />
+    </main>
   </body>
 </html>
 
