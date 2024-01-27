@@ -1,5 +1,5 @@
 interface Props {
-  images: { imageRef: string; title: string; link: string }[];
+  images: { imageRef: string; title: string; link?: string }[];
 }
 
 const PictureGallery: React.FC<Props> = ({ images }) => {
@@ -16,7 +16,8 @@ const PictureGallery: React.FC<Props> = ({ images }) => {
             }}
           ></div>
           <a
-            href={image.link}
+            href={image.link ? image.link : image.imageRef}
+            target="_blank"
             className='z-50 text-xl opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100'
           >
             {image.title}

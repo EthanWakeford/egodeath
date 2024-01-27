@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import ProjectPageInfo from '../../components/ProjectPageInfo';
 import Sidekick from '../../components/Sidekick';
+import PictureGallery from '../../components/PictureGallery';
 
 // read from Firestore
 // turn all entries into possible static routes
@@ -37,4 +38,35 @@ const { testData } = Astro.props;
     credits={['me', 'clifford']}
     date='January 26, 2024'
   />
+  <PictureGallery
+    images={[
+      {
+        imageRef: '../src/assets/placeholders/1200x800.jpg',
+        title: 'blue car',
+      },
+      {
+        imageRef: '../src/assets/placeholders/1200x800.jpg',
+        title: 'blue car',
+      },
+      {
+        imageRef: '../src/assets/placeholders/1200x800.jpg',
+        link: '/',
+        title: 'blue car',
+      },
+      {
+        imageRef: '../src/assets/placeholders/1200x800.jpg',
+        link: '/',
+        title: 'blue car',
+      },
+      {
+        imageRef: '../src/assets/placeholders/1200x800.jpg',
+        link: '/',
+        title: 'blue car',
+      },
+      {
+        imageRef: '../src/assets/placeholders/1200x800.jpg',
+        link: '/',
+        title: 'blue car',
+      },
+    ]}></PictureGallery>
 </Layout>
