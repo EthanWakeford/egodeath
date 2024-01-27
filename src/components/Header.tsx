@@ -11,7 +11,7 @@ const Header: React.FC<HeaderProps> = ({ title, navs }) => {
           <a href='/'>{title}</a>
         </h2>
       </div>
-      <nav className='hidden items-center justify-evenly gap-4 align-middle lg:col-span-3 lg:flex'>
+      <nav className='hidden items-center justify-center gap-16 align-middle lg:col-span-3 lg:flex'>
         {navs.map((nav) => (
           <span className=''>
             <a className='hover:text-black' href={`/${nav}`} key={nav}>
