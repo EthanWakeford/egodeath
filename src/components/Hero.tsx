@@ -37,10 +37,10 @@ const Hero: React.FC<HeroProps> = ({
         backgroundImages.length
     ) {
       // Previous image, sliding out and fading out
-      return `${baseClasses} transform invisible opacity-50`;
+      return `${baseClasses} transform hidden opacity-50`;
     } else {
       // All other images, positioned offscreen to the right and hidden
-      return `${baseClasses} transform translate-x-full invisible opacity-0`;
+      return `${baseClasses} transform translate-x-full hidden opacity-0`;
     }
   };
 
