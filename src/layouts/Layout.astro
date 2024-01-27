@@ -1,5 +1,6 @@
 ---
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 interface Props {
   title: string;
@@ -41,6 +42,21 @@ const { title, metaDescription } = Astro.props;
     <main>
       <slot />
     </main>
+    <Footer
+      address='your moms house'
+      copyright='EgoDeath 2024'
+      navs={[
+        { link: '/', name: 'HOME' },
+        { link: '/commercials', name: 'COMMERCIALS' },
+        { link: '/food', name: 'FOOD' },
+        { link: '/events', name: 'EVENTS' },
+      ]}
+      phone='91812323'
+      socials={[
+        { link: 'https://www.instagram.com/', type: 'instagram' },
+        { link: 'https://www.facebook.com/', type: 'facebook' },
+      ]}
+    />
   </body>
 </html>
 

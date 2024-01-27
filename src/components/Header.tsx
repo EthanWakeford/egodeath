@@ -22,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({ title, navs }) => {
       </nav>
       <div className='hidden lg:col-span-1 lg:block'>
         <a href='/contact' className=''>
-          <button className='bg-other rounded-xl px-4 py-2  text-xl hover:text-black'>
+          <button className='rounded-xl bg-other px-4 py-2  text-xl hover:text-black'>
             contact us
           </button>
         </a>
