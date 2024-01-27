@@ -3,13 +3,14 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero';
 import PictureGallery from '../components/PictureGallery';
 
-import smallPicture from '/home/onslow/astro_stuffs/liberal-media/src/assets/placeholders/300 x 250.jpg';
+import smallPicture from 'C:/Users/natha/OneDrive/Documents/Code/Ego Death/liberal-media/src/assets/placeholders/300 x 250.jpg';
 import mediumPicture from '../src/assets/placeholders/1200x800.jpg';
 import { string } from 'astro/zod';
+import Sidekick from '../components/Sidekick';
 ---
 
 <Layout title='gallery' metaDescription='this is my other astro page'>
-  <Hero
+  <Sidekick
     welcomeText='welomce to my gallery'
     tagline='it sucks'
     backgroundImages={[

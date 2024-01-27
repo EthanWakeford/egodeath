@@ -14,6 +14,9 @@ export default {
         accent: '#e59500',
         other: '#002642',
       },
+      height: {
+        '1/2vh': '50vh',
+      },
     },
   },
   plugins: [],
