@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface HeaderProps {
   title: string;
@@ -7,13 +7,30 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ title, navs }) => {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const headerHeight = 100; // Adjust as needed
+
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      setIsScrolled(offset > headerHeight);
+      console.log(offset);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
   };
 
   return (
-    <header className='fixed top-0 z-50 flex w-screen justify-between bg-white px-4 py-2 text-center align-middle lg:grid lg:grid-cols-5 lg:bg-transparent lg:px-0 lg:py-8'>
+    <header className={`fixed top-0 z-50 flex w-screen justify-between bg-white px-4 py-2 text-center align-middle lg:grid lg:grid-cols-5 lg:px-0 lg:py-8 transition-all duration-1000 ${isScrolled ? 'bg-opacity-100' : 'lg:bg-transparent'}`}>
       <div className='items-center justify-center align-middle lg:col-span-1 lg:flex'>
         <h2 className='text-center text-2xl text-black hover:text-black lg:text-white'>
           <a href='/'>{title}</a>
@@ -22,7 +39,7 @@ const Header: React.FC<HeaderProps> = ({ title, navs }) => {
       <nav className='hidden items-center justify-center gap-16 align-middle lg:col-span-3 lg:flex'>
         {navs.map((nav) => (
           <a
-            className='text-bold text-xl transition duration-300 ease-in-out hover:text-black'
+            className={`text-bold text-xl transition duration-300 ease-in-out hover:text-black ${isScrolled ? 'text-black' : 'text-white'}`}
             href={`/${nav}`}
             key={nav}
           >
