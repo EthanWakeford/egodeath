@@ -14,10 +14,10 @@ const StatsCard: React.FC<Props> = ({ body, title }) => {
   if (inViewport && !shouldAnimate) setShouldAnimate(true);
 
   return (
-    <div className='h-[80vh] bg-white px-32 text-black'>
+    <div className='h-[80vh] bg-white px-8 text-black lg:px-32'>
       <div
         ref={ref}
-        className={`${shouldAnimate ? 'fade-in-up' : 'opacity-0'} flex h-full flex-col items-center justify-evenly`}
+        className={`${shouldAnimate ? 'fade-in-up' : 'opacity-0'} flex h-full flex-col items-center justify-around`}
       >
         <h3 className='text-xl'>{title}</h3>
         <p>{body}</p>
