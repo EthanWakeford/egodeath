@@ -45,7 +45,7 @@ const Sidekick: React.FC<SidekickProps> = ({
   };
 
   return (
-    <div className='h-72 lg:h-1/2vh overflow-auto'>
+    <div className='h-1/2vh relative overflow-auto'>
       {backgroundImages.map((image, index) => (
         <div
           key={image}
@@ -53,7 +53,7 @@ const Sidekick: React.FC<SidekickProps> = ({
           style={{ backgroundImage: `url(${image})` }}
         />
       ))}
-      <div className='absolute top-36 lg:top-80 z-10 px-4 pb-16 text-left lg:pb-32 lg:pl-16 lg:pr-64'>
+      <div className='absolute bottom-0 z-10 px-4 pb-8 text-left lg:pb-16 lg:pl-16 lg:pr-64'>
         <div className='fade-in-up'>
           <h2 className='text-lg lg:text-2xl'>{welcomeText}</h2>
           <h1 className='mt-12 text-3xl tracking-widest lg:mt-20 lg:text-5xl'>
