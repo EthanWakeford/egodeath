@@ -51,12 +51,8 @@ const { test, test2, testdescription, image, image2 } = Astro.props;
   <Sidekick
     tagline={test}
     welcomeText={test2!}
-    backgroundImages={[
-      '../src/assets/placeholders/1920x1080.jpg',
-      '../src/assets/placeholders/1280x720.jpg',
-      '../src/assets/placeholders/1920x1080.jpg',
-      '../src/assets/placeholders/1280x720.jpg',
-    ]}
+    backgroundImages={[image, image2]}
+    client:idle
   />
   <ProjectPageInfo
     description={testdescription}
