@@ -14,7 +14,7 @@ const Footer: React.FC<Props> = ({
   socials,
 }) => {
   return (
-    <footer className='pb-8 pt-16 text-center lg:px-48'>
+    <footer className='pb-8 pt-16 text-center lg:px-48 bg-ltbg1 dark:bg-dkbg1 text-black dark:text-white'>
       <div className='flex flex-col items-center justify-evenly lg:flex-row lg:justify-between'>
         <div className='hidden lg:block'>
           <p className='text-left'>{address}</p>
@@ -28,7 +28,7 @@ const Footer: React.FC<Props> = ({
               </a>
             ))}
             <a href='/contact' className=''>
-            <button className='my-2 transform rounded-xl bg-other px-4 py-2 text-lg transition duration-300 ease-in-out hover:scale-110 hover:bg-tertiary hover:text-black'>
+            <button className='my-2 transform rounded-xl text-white bg-other px-4 py-2 text-lg transition duration-300 ease-in-out hover:scale-110 hover:bg-tertiary hover:text-black'>
               CONTACT US
             </button>
           </a>

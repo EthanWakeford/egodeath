@@ -13,6 +13,10 @@ export default {
         tertiary: '#840032',
         accent: '#e59500',
         other: '#002642',
+        dkbg1: '#0f0f0f',
+        dkbg2: '#1f1f1f',
+        ltbg1: '#f5f5f5',
+        ltbg2: '#e5e5e5',
       },
       height: {
         '1/2vh': '50vh',

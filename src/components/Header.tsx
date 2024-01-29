@@ -31,17 +31,17 @@ const Header: React.FC<HeaderProps> = ({ title, navs }) => {
 
   return (
     <header
-      className={`fixed top-0 z-50 flex w-screen justify-between bg-white px-4 py-2 text-center align-middle transition-all duration-1000 lg:grid lg:grid-cols-5 lg:px-0 lg:py-8 ${isScrolled ? 'bg-opacity-100' : 'lg:bg-transparent'}`}
+      className={`fixed top-0 z-50 flex w-screen justify-between px-4 py-2 text-center align-middle transition-all duration-1000 lg:grid lg:grid-cols-5 lg:px-0 lg:py-8 ${isScrolled ? 'bg-opacity-100' : 'bg-transparent dark:bg-transparent'} dark:bg-black bg-ltbg1`}
     >
       <div className='items-center justify-center align-middle lg:col-span-1 lg:flex'>
-        <h2 className='text-center text-2xl transition-all duration-300 text-black hover:text-black lg:text-white'>
+        <h2 className='text-center text-2xl transition-all duration-300 text-black dark:text-white hover:text-black lg:text-white'>
           <a href='/'>{title}</a>
         </h2>
       </div>
       <nav className='hidden items-center justify-center gap-16 align-middle lg:col-span-3 lg:flex'>
         {navs.map((nav) => (
           <a
-            className={`text-bold text-base transition duration-300 ease-in-out hover:text-black ${isScrolled ? 'text-black' : 'text-white'}`}
+            className={`text-bold text-base transition duration-300 ease-in-out hover:text-black ${isScrolled ? 'text-black dark:text-white' : 'text-white'}`}
             href={`${nav.link}`}
             key={nav.name}
           >
@@ -50,7 +50,7 @@ const Header: React.FC<HeaderProps> = ({ title, navs }) => {
         ))}
       </nav>
       <i
-        className={`fa-solid cursor-pointer text-2xl text-black transition-transform duration-300 lg:hidden ${isNavOpen ? 'fa-xmark rotate-180 opacity-100' : 'fa-bars rotate-0 opacity-50'}`}
+        className={`fa-solid cursor-pointer text-2xl text-black dark:text-white transition-transform duration-300 lg:hidden ${isNavOpen ? 'fa-xmark rotate-180 opacity-100' : 'fa-bars rotate-0 opacity-50'}`}
         onClick={toggleNav}
       ></i>
 

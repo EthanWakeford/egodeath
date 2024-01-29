@@ -100,4 +100,12 @@ const { title, metaDescription } = Astro.props;
       @apply scale-[1.25];
     }
   }
+
+  a {
+    @apply transition-transform duration-300 ease-in-out;
+  }
+
+  a:hover {
+    @apply scale-110;
+  }
 </style>
