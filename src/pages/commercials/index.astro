@@ -2,6 +2,10 @@
 import Layout from '../../layouts/Layout.astro';
 import Sidekick from '../../components/Sidekick';
 import TextImageCard from '../../components/TextImageCard';
+
+import { getTestData } from '../../firebase';
+
+const testData = await getTestData();
 ---
 
 <Layout metaDescription='commercials' title='Commercials'>
@@ -15,13 +19,24 @@ import TextImageCard from '../../components/TextImageCard';
     tagline='Commercial'
     welcomeText=''
   />
+  {
+    testData.map((doc, index) => (
+      <TextImageCard
+        bodyText={doc.testdescription}
+        imageAltText={doc.name}
+        imageLink={doc.image}
+        title={doc.name}
+        link={`/commercials/${doc.name}`}
+        reversed={index % 2 === 0}
+      />
+    ))
+  }
   <TextImageCard
     bodyText='we did some fun stuff here'
     imageAltText='fun stuff'
     imageLink='src/assets/placeholders/1200x800.jpg'
     title='fun stuff'
     link='/commercials/clifford'
-    linkText='See More'
     reversed={false}
   /><TextImageCard
     bodyText='we did some fun stuff here'
@@ -29,25 +44,6 @@ import TextImageCard from '../../components/TextImageCard';
     imageLink='src/assets/placeholders/1200x800.jpg'
     title='fun stuff'
     link='/commercials/clifford'
-    linkText='See More'
-    reversed={true}
-  />
-  <TextImageCard
-    bodyText='we did some fun stuff here'
-    imageAltText='fun stuff'
-    imageLink='src/assets/placeholders/1200x800.jpg'
-    title='fun stuff'
-    link='/commercials/clifford'
-    linkText='See More'
-    reversed={false}
-  />
-  <TextImageCard
-    bodyText='we did some fun stuff here'
-    imageAltText='fun stuff'
-    imageLink='src/assets/placeholders/1200x800.jpg'
-    title='fun stuff'
-    link='/commercials/clifford'
-    linkText='See More'
     reversed={true}
   />
 </Layout>

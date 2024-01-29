@@ -4,8 +4,8 @@ interface Props {
   imageAltText: string;
   bodyText: string;
   link: string;
-  linkText: string;
-  reversed: boolean;
+  linkText?: string;
+  reversed?: boolean;
 }
 
 const TextImagecard: React.FC<Props> = ({
@@ -14,7 +14,7 @@ const TextImagecard: React.FC<Props> = ({
   imageAltText,
   bodyText,
   link,
-  linkText,
+  linkText = 'See More',
   reversed = false,
 }) => {
   return (
