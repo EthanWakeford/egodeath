@@ -50,14 +50,13 @@ const PictureGallery: React.FC<Props> = ({ images }) => {
 
       {isModalOpen && (
         <div className='fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-50 p-0 lg:mt-8'>
-          <div className='z-50 m-auto rounded bg-white'>
+          <div className='z-50 m-auto rounded'>
             {selectedImage && (
-              <div>
+              <div className='relative'>
                 <i
-                  className='absolute lg:relative right-0 mx-4 flex cursor-pointer justify-end text-4xl text-black transition-transform duration-300 ease-in-out hover:text-red-500'
+                  className='absolute fa-solid fa-xmark rotate-180 opacity-100 bg-dkbg1 top-0 right-0 rounded-full px-2 mx-2 my-2 flex cursor-pointer justify-end text-4xl text-white transition-transform duration-300 ease-in-out hover:text-red-500'
                   onClick={closeModal}
                 >
-                  &times;
                 </i>
                 <img src={selectedImage.imageRef} alt={selectedImage.title} />
               </div>

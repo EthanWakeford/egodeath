@@ -18,9 +18,9 @@ const ProjectPageInfo: React.FC<Props> = ({
       <h1 className='text-center text-2xl'>{title}</h1>
       <h3 className='text-md mb-16 mt-4 text-center lg:mb-32'>{company}</h3>
       <div className='flex grid-cols-4 flex-col gap-16 lg:grid'>
-        <h2 className='col-span-3 text-justify text-xl lg:text-left'>
+        <p className='break-words'>
           {description}
-        </h2>
+        </p>
         <div className='col-span-1 flex flex-col gap-4 text-center text-lg lg:text-left'>
           <h3 className=''>Credits</h3>
           <div className='flex flex-wrap justify-center gap-2 lg:justify-start'>
