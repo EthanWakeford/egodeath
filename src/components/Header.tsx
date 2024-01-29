@@ -57,12 +57,12 @@ const Header: React.FC<HeaderProps> = ({ title, navs }) => {
       <div
         className={`absolute left-0 top-full z-50 w-full transform bg-white shadow-md lg:hidden ${isNavOpen ? 'scale-y-100' : 'scale-y-0'} origin-top transition-transform duration-300 ease-in-out`}
       >
-        <nav className='flex flex-col'>
+        <nav className='flex flex-col dark:bg-dkbg1 hover:bg-dkbg2'>
           {navs.map((nav, index) => (
             <a
               key={index}
               href={`${nav.link}`}
-              className='px-6 py-4 text-base text-black hover:bg-gray-100'
+              className='px-6 py-4 text-base text-black dark:text-white dark:bg-dkbg1'
               onClick={() => setIsNavOpen(false)}
             >
               {nav.name}
