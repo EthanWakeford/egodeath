@@ -1,23 +1,28 @@
 interface Props {
   navs: { link: string; name: string }[];
-  address: string;
+  address?: string;
+  email?: string;
   socials: { link: string; type: string }[];
   phone: string;
   copyright: string;
+  cta: string;
 }
 
 const Footer: React.FC<Props> = ({
   address,
+  email,
   copyright,
   navs,
   phone,
   socials,
+  cta,
 }) => {
   return (
-    <footer className='pb-8 pt-16 text-center lg:px-48 bg-ltbg1 dark:bg-dkbg1 text-black dark:text-white'>
+    <footer className='bg-ltbg1 pb-8 pt-16 text-center text-black lg:px-48 dark:bg-dkbg1 dark:text-white'>
       <div className='flex flex-col items-center justify-evenly lg:flex-row lg:justify-between'>
         <div className='hidden lg:block'>
-          <p className='text-left'>{address}</p>
+          {address && <p className='text-left'>{address}</p>}
+          {email && <p className='text-left'>{email}</p>}
           <p className='text-left'>{phone}</p>
         </div>
         <div>
