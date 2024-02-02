@@ -54,7 +54,7 @@ const PictureGallery: React.FC<Props> = ({ images }) => {
             {selectedImage && (
               <div className='relative'>
                 <i
-                  className='absolute fa-solid fa-xmark rotate-180 opacity-100 bg-dkbg1 top-0 right-0 rounded-full px-2 mx-2 my-2 flex cursor-pointer justify-end text-4xl text-white transition-transform duration-300 ease-in-out hover:text-red-500'
+                  className='absolute fa-solid fa-xmark rotate-180 opacity-100 bg-dkbg1 top-0 right-0 rounded-full px-2 mx-2 my-2 flex cursor-pointer justify-end text-4xl text-white transition-all duration-300 ease-in-out hover:text-red-500 z-50'
                   onClick={closeModal}
                 >
                 </i>

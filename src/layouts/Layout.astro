@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { ViewTransitions, fade } from 'astro:transitions';
 
 interface Props {
   title: string;
@@ -50,6 +51,7 @@ const cta = 'Contact Us';
       localStorage.removeItem('theme');
     </script>
     <title>{title ? `${title} - ${websiteName}` : websiteName}</title>
+    <ViewTransitions />
   </head>
   <body>
     <Header
@@ -58,7 +60,7 @@ const cta = 'Contact Us';
       cta={cta}
       client:load
     />
-    <main>
+    <main transition:animate={fade({ duration: '0.7s' })}>
       <slot />
     </main>
     <Footer
