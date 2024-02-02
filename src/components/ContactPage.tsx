@@ -18,10 +18,10 @@ const ContactPage: React.FC<Props> = ({
   socials,
 }) => {
   return (
-    <div className='pt-32 lg:pb-40 lg:pt-64 flex flex-col items-center px-8 text-center text-black dark:text-white bg-ltbg1 dark:bg-dkbg1'>
+    <div className='flex flex-col items-center bg-ltbg1 px-8 pt-32 text-center text-black lg:pb-40 lg:pt-64 dark:bg-dkbg1 dark:text-white'>
       <h1 className='pb-4 text-2xl lg:text-4xl'>{title}</h1>
       <h2 className='pb-16 lg:text-xl'>{subHeading}</h2>
-      <div className='pb-16 grid h-48 grid-cols-2 grid-rows-2  lg:text-xl'>
+      <div className='grid h-48 grid-cols-2 grid-rows-2 pb-16  lg:text-xl'>
         <div className='flex size-full items-center justify-center border-b border-r border-neutral-300'>
           <p className='p-4'>{email}</p>
         </div>

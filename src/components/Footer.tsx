@@ -33,10 +33,10 @@ const Footer: React.FC<Props> = ({
               </a>
             ))}
             <a href='/contact' className=''>
-            <button className='transform rounded-xl bg-other px-4 py-2 text-lg transition duration-300 ease-in-out bg-tertiary hover:scale-110 hover:bg-accent'>
-              CONTACT US
-            </button>
-          </a>
+              <button className='bg-other transform rounded-xl bg-tertiary px-4 py-2 text-lg transition duration-300 ease-in-out hover:scale-110 hover:bg-accent'>
+                CONTACT US
+              </button>
+            </a>
           </nav>
           <nav className='mb-8 flex justify-center gap-4 lg:justify-end lg:gap-8'>
             {socials.map((social) => (

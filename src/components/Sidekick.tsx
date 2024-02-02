@@ -45,7 +45,7 @@ const Sidekick: React.FC<SidekickProps> = ({
   };
 
   return (
-    <div className='h-1/2vh relative overflow-auto'>
+    <div className='relative h-1/2vh overflow-auto'>
       {backgroundImages.map((image, index) => (
         <div
           key={image}
