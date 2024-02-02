@@ -14,7 +14,7 @@ const ProjectPageInfo: React.FC<Props> = ({
   credits,
 }) => {
   return (
-    <div className='px-8 py-16 lg:px-64 lg:py-32'>
+    <div className='px-8 py-16 lg:px-64 lg:py-32 bg-dkbg2'>
       <h1 className='text-center text-2xl'>{title}</h1>
       <h3 className='text-md mb-16 mt-4 text-center lg:mb-32'>{company}</h3>
       <div className='flex grid-cols-4 flex-col gap-16 lg:grid'>

@@ -31,7 +31,7 @@ const Header: React.FC<HeaderProps> = ({ title, navs }) => {
 
   return (
     <header
-      className={`fixed top-0 z-50 flex w-screen justify-between px-4 py-2 text-center align-middle transition-all duration-1000 lg:grid lg:grid-cols-5 lg:px-0 lg:py-8 ${isScrolled ? 'bg-opacity-100' : 'bg-transparent dark:bg-transparent'} dark:bg-black bg-ltbg1`}
+      className={`fixed top-0 z-50 flex w-screen justify-between px-4 py-2 text-center align-middle transition-all duration-1000 lg:grid lg:grid-cols-5 lg:px-0 lg:py-8 ${isScrolled ? 'bg-opacity-100' : 'bg-transparent dark:bg-transparent'} dark:bg-dkbg1 bg-ltbg1`}
     >
       <div className='items-center justify-center align-middle lg:col-span-1 lg:flex'>
         <h2 className='text-center text-2xl transition-all duration-300 text-black dark:text-white hover:text-black lg:text-white'>
@@ -69,7 +69,7 @@ const Header: React.FC<HeaderProps> = ({ title, navs }) => {
             </a>
           ))}
           <a href='/contact' className=''>
-            <button className='my-2 transform rounded-xl bg-other px-4 py-2 text-base transition duration-300 ease-in-out hover:scale-110 hover:bg-tertiary hover:text-black'>
+            <button className='my-2 transform rounded-xl bg-other px-4 py-2 text-base transition duration-300 ease-in-out hover:scale-110 bg-tertiary hover:bg-accent'>
               CONTACT US
             </button>
           </a>
@@ -77,7 +77,7 @@ const Header: React.FC<HeaderProps> = ({ title, navs }) => {
       </div>
       <div className='hidden lg:col-span-1 lg:block'>
         <a href='/contact' className=''>
-          <button className='transform rounded-xl bg-other px-4  py-2 text-lg transition duration-300 ease-in-out hover:scale-110 hover:bg-tertiary hover:text-black'>
+          <button className='transform rounded-xl bg-other px-4 py-2 text-lg transition duration-300 ease-in-out bg-tertiary hover:scale-110 hover:bg-accent'>
             CONTACT US
           </button>
         </a>

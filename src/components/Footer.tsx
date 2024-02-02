@@ -28,7 +28,7 @@ const Footer: React.FC<Props> = ({
               </a>
             ))}
             <a href='/contact' className=''>
-            <button className='my-2 transform rounded-xl text-white bg-other px-4 py-2 text-lg transition duration-300 ease-in-out hover:scale-110 hover:bg-tertiary hover:text-black'>
+            <button className='transform rounded-xl bg-other px-4 py-2 text-lg transition duration-300 ease-in-out bg-tertiary hover:scale-110 hover:bg-accent'>
               CONTACT US
             </button>
           </a>

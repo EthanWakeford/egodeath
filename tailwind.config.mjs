@@ -8,11 +8,12 @@ export default {
     },
     extend: {
       colors: {
-        black: '#100007',
-        white: '#e5dada',
+        black: '#0f0f0f',
+        white: '#f5f5f5',
+        primary: '#e59500',
+        secondary: '#002642',
         tertiary: '#840032',
         accent: '#e59500',
-        other: '#002642',
         dkbg1: '#0f0f0f',
         dkbg2: '#1f1f1f',
         ltbg1: '#f5f5f5',
