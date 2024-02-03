@@ -3,9 +3,11 @@ import Layout from '../../layouts/Layout.astro';
 import Sidekick from '../../components/Sidekick';
 import TextImageCard from '../../components/TextImageCard';
 
-import { getTestData } from '../../firebase';
+import { getData } from '../../firebase';
 
-const testData = await getTestData();
+const projectData = await getData('projects', 'Commercials');
+console.log(projectData);
+// TODO: Commercials filter not working
 ---
 
 <Layout metaDescription='commercials' title='Commercials'>
@@ -20,30 +22,15 @@ const testData = await getTestData();
     welcomeText=''
   />
   {
-    testData.map((doc, index) => (
+    projectData.map((doc, index) => (
       <TextImageCard
-        bodyText={doc.testdescription}
-        imageAltText={doc.name}
-        imageLink={doc.image}
-        title={doc.name}
-        link={`/commercials/${doc.name}`}
+        bodyText={doc.hero_section.subhead}
+        imageAltText={doc.title}
+        imageLink={doc.hero_section.project_hero_photo}
+        title={doc.hero_section.headline}
+        link={`/commercials/${doc.slug}`}
         reversed={index % 2 === 0}
       />
     ))
   }
-  <TextImageCard
-    bodyText='we did some fun stuff here'
-    imageAltText='fun stuff'
-    imageLink='src/assets/placeholders/1200x800.jpg'
-    title='fun stuff'
-    link='/commercials/clifford'
-    reversed={false}
-  /><TextImageCard
-    bodyText='we did some fun stuff here'
-    imageAltText='fun stuff'
-    imageLink='src/assets/placeholders/1200x800.jpg'
-    title='fun stuff'
-    link='/commercials/clifford'
-    reversed={true}
-  />
 </Layout>

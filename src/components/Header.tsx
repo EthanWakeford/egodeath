@@ -16,7 +16,6 @@ const Header: React.FC<HeaderProps> = ({ title, navs, cta }) => {
     const handleScroll = () => {
       const offset = window.scrollY;
       setIsScrolled(offset > headerHeight);
-      console.log(offset);
     };
 
     window.addEventListener('scroll', handleScroll);

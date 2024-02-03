@@ -26,7 +26,7 @@ const TextImagecard: React.FC<Props> = ({
       />
       <div className='flex flex-col justify-between bg-ltbg2 py-8  text-center text-black lg:col-span-1 lg:px-12 lg:py-24 dark:bg-dkbg1 dark:text-white'>
         <h3 className='text-lg lg:text-5xl'>{title}</h3>
-        <p className='text-base lg:text-xl'>{bodyText}</p>
+        <p className='text-base lg:text-xl truncate max-h-10'>{bodyText}</p>
         <a
           href={link}
           className='text-sm text-tertiary underline underline-offset-4 transition-all  duration-300 hover:text-tertiary lg:text-lg'
