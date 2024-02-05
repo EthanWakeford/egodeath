@@ -6,7 +6,7 @@ interface HeaderProps {
   cta: string;
 }
 
-const Header: React.FC<HeaderProps> = ({ title, navs, cta }) => {
+const Header: React.FC<HeaderProps> = ({ title, navs }) => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 

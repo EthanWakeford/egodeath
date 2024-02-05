@@ -1,5 +1,32 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Sidekick from '../../components/Sidekick';
+import TextImageCard from '../../components/TextImageCard';
+
+import { getData } from '../../firebase';
+
+const category = 'Events';
+const projectData = await getData('projects', category);
+const backgroundImages = projectData.sort().map((doc) => doc.hero_section.project_hero_photo);
 ---
 
-<Layout metaDescription='events' title='Events' />
+<Layout metaDescription={category} title={category} >
+<Sidekick
+    backgroundImages={backgroundImages}
+    tagline={category}
+    welcomeText=''
+    client:visible
+  />
+  {
+    projectData.map((doc, index) => (
+      <TextImageCard
+        bodyText={doc.hero_section.subhead}
+        imageAltText={doc.title}
+        imageLink={doc.hero_section.project_hero_photo}
+        title={doc.hero_section.headline}
+        link={`/commercials/${doc.slug}`}
+        reversed={index % 2 === 0}
+      />
+    ))
+  }
+  </Layout>

@@ -5,6 +5,7 @@ import Sidekick from '../../components/Sidekick';
 import PictureGallery from '../../components/PictureGallery';
 
 import { getData } from '../../firebase.ts';
+import GoBack from '../../components/GoBack';
 
 // read from Firestore
 // turn all entries into possible static routes
@@ -51,11 +52,12 @@ const {
 ---
 
 <Layout metaDescription={description} title={title}>
+  <GoBack category={category} client:visible/>
   <Sidekick
     tagline={headline}
     welcomeText={subhead}
     backgroundImages={[backgroundImage]}
-    client:idle
+    client:visible
   />
   <ProjectPageInfo
     description={description}

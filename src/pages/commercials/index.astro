@@ -5,21 +5,17 @@ import TextImageCard from '../../components/TextImageCard';
 
 import { getData } from '../../firebase';
 
-const projectData = await getData('projects', 'Commercials');
-console.log(projectData);
-// TODO: Commercials filter not working
+const category = 'Commercials';
+const projectData = await getData('projects', category);
+const backgroundImages = projectData.sort().map((doc) => doc.hero_section.project_hero_photo);
 ---
 
-<Layout metaDescription='commercials' title='Commercials'>
+<Layout metaDescription={category} title={category}>
   <Sidekick
-    backgroundImages={[
-      'src/assets/placeholders/1920x1080.jpg',
-      'src/assets/placeholders/1280x720.jpg',
-      'src/assets/placeholders/1920x1080.jpg',
-      'src/assets/placeholders/1280x720.jpg',
-    ]}
-    tagline='Commercial'
+    backgroundImages={backgroundImages}
+    tagline={category}
     welcomeText=''
+    client:visible
   />
   {
     projectData.map((doc, index) => (
