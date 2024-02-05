@@ -56,7 +56,7 @@ const Sidekick: React.FC<SidekickProps> = ({
       <div className='absolute bottom-0 z-10 px-4 pb-8 text-left lg:pb-16 lg:pl-16 lg:pr-64'>
         <div className='fade-in-up'>
           <h2 className='text-lg lg:text-2xl'>{welcomeText}</h2>
-          <h1 className='mt-12 text-3xl tracking-widest lg:mt-6 lg:text-5xl'>
+          <h1 className='mt-2 text-3xl tracking-widest lg:mt-6 lg:text-5xl'>
             {tagline}
           </h1>
         </div>

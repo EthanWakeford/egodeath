@@ -31,17 +31,17 @@ const Header: React.FC<HeaderProps> = ({ title, navs }) => {
 
   return (
     <header
-      className={`fixed top-0 z-50 flex w-screen justify-between px-4 py-2 text-center align-middle transition-all duration-1000 lg:grid lg:grid-cols-5 lg:px-0 lg:py-8 ${isScrolled ? 'bg-opacity-100' : 'bg-transparent dark:bg-transparent'} bg-ltbg1 dark:bg-dkbg1`}
+      className={`shadow-2xl fixed top-0 z-50 flex w-screen justify-between px-4 py-2 text-center align-middle transition-all duration-1000 lg:grid lg:grid-cols-5 lg:px-0 lg:py-8 ${isScrolled ? 'bg-opacity-100' : 'bg-opacity-50 dark:bg-opacity-50'} bg-ltbg1 dark:bg-dkbg1`}
     >
       <div className='items-center justify-center align-middle lg:col-span-1 lg:flex'>
-        <h2 className='text-center text-2xl text-black transition-all duration-300 hover:text-black lg:text-white dark:text-white'>
+        <h2 className='text-center text-2xl text-black transition-all duration-300 hover:text-black dark:text-white'>
           <a href='/'>{title}</a>
         </h2>
       </div>
       <nav className='hidden items-center justify-center gap-16 align-middle lg:col-span-3 lg:flex'>
         {navs.map((nav) => (
           <a
-            className={`text-bold text-base transition duration-300 ease-in-out hover:text-black ${isScrolled ? 'text-black dark:text-white' : 'text-white'}`}
+            className='text-bold text-base transition duration-300 ease-in-out hover:text-black text-black dark:text-white'
             href={`${nav.link}`}
             key={nav.name}
           >
