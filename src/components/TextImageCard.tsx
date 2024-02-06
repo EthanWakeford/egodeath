@@ -29,7 +29,7 @@ const TextImagecard: React.FC<Props> = ({
         <p className='text-base lg:text-xl truncate max-h-10'>{bodyText}</p>
         <a
           href={link}
-          className='text-sm text-tertiary hover:text-accent underline underline-offset-4 transition-all  duration-300 hover:text-tertiary lg:text-lg'
+          className='text-sm text-tertiary hover:text-accent underline underline-offset-4 transition-all  duration-300 lg:text-2xl'
         >
           {linkText}
         </a>
