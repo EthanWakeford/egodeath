@@ -57,8 +57,8 @@ const cta = 'Contact Us';
       cta={cta}
       client:load
     />
-    <main transition:animate={fade({ duration: '0.7s' })}>
-      <slot />
+    <main>
+      <slot  transition:animate={fade({ duration: '0.7s' })}/>
     </main>
     <Footer
       cta={cta}
