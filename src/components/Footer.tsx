@@ -4,6 +4,8 @@ import twitterIcon from '@iconify/icons-mdi/twitter';
 import instagramIcon from '@iconify/icons-mdi/instagram';
 import alertCircle from '@iconify/icons-mdi/alert-circle';
 
+type SocialType = 'facebook' | 'twitter' | 'instagram';
+
 const iconMap = {
   facebook: facebookIcon,
   twitter: twitterIcon,
@@ -29,7 +31,7 @@ const Footer: React.FC<Props> = ({
   socials,
   cta,
 }) => {
-  const getIconFromSocialsType = (type: string) => iconMap[type];
+  const getIconFromSocialsType = (type: string) => iconMap[type as 'facebook' | 'twitter' | 'instagram'];
   return (
     <footer className='bg-ltbg1 pb-8 pt-16 text-center text-black lg:px-48 dark:bg-dkbg1 dark:text-white'>
       <div className='flex flex-col items-center justify-evenly lg:flex-row lg:justify-between'>
