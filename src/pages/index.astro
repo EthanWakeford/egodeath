@@ -5,8 +5,10 @@ import AboutCard from '../components/AboutCard';
 import StatsCard from '../components/StatsCard';
 
 import { getData } from '../firebase';
+import ProjectGallery from '../components/ProjectGallery';
 
 const heroImageData = await getData('images');
+const projectData = await getData('projects');
 ---
 
 <Layout title='' metaDescription='this is my first astro page'>
@@ -23,7 +25,12 @@ const heroImageData = await getData('images');
     linkText='See our work'
     linkUrl='/commercials'
   />
-  <StatsCard
+  <ProjectGallery
+    projects={projectData}
+    galleryHeader='Explore our work'
+    client:idle
+  />
+  <!-- <StatsCard
     title='Hello Look at my Stats'
     body=`3. 	Kevin DurantPHX	43
     4. 	Jayson TatumBOS	39
@@ -38,5 +45,5 @@ const heroImageData = await getData('images');
     1. 	LaMelo BallCHA	13
     1. 	Luka DoncicDAL	13`
     client:visible
-  />
+  /> -->
 </Layout>

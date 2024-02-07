@@ -1,0 +1,76 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProjectPageInfo from '../../components/ProjectPageInfo';
+import Sidekick from '../../components/Sidekick';
+import PictureGallery from '../../components/PictureGallery';
+
+import { getData } from '../../firebase.ts';
+import GoBack from '../../components/GoBack';
+
+// read from Firestore
+// turn all entries into possible static routes
+// take data and put it into props to use on webpage
+
+export async function getStaticPaths() {
+  const mydata = await getData('projects');
+
+  const staticPaths = mydata.map((doc) => {
+    return {
+      params: { project: doc.slug }, // Use slug for URL param
+      props: {
+        title: doc.title,
+        category: doc.project_category,
+        slug: doc.slug,
+        headline: doc.hero_section.headline,
+        subhead: doc.hero_section.subhead,
+        backgroundImage: doc.hero_section.project_hero_photo,
+        description: doc.project_content.project_description,
+        media: doc.project_content.project_media, // Assuming URLs or references to media
+        credits: doc.project_content.project_credits,
+        videoAudioEmbed: doc.project_content.video_audio_embed,
+      },
+    };
+  });
+
+  // Return paths
+  return [...staticPaths];
+}
+
+const { project } = Astro.params;
+const {
+  title,
+  category,
+  slug,
+  headline,
+  subhead,
+  backgroundImage,
+  description,
+  media, // This might need special handling depending on its structure
+  credits,
+  videoAudioEmbed,
+} = Astro.props;
+---
+
+<Layout metaDescription={description} title={title}>
+  <GoBack category={category} client:visible/>
+  <Sidekick
+    tagline={headline}
+    welcomeText={subhead}
+    backgroundImages={[backgroundImage]}
+    client:visible
+  />
+  <ProjectPageInfo
+    description={description}
+    title={title}
+    company="Your Company Name Here"
+    credits={Object.values(credits)}
+    date="Your Date Here"
+  />
+  <PictureGallery
+    images={media.map((item: string) => ({
+      imageRef: item, // Assuming this directly references the image URL
+      title: title, // You might want to have unique titles per image if possible
+    }))}
+    client:load
+  />
+</Layout>

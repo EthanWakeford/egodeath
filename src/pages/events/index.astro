@@ -24,7 +24,7 @@ const backgroundImages = projectData.sort().map((doc) => doc.hero_section.projec
         imageAltText={doc.title}
         imageLink={doc.hero_section.project_hero_photo}
         title={doc.hero_section.headline}
-        link={`/commercials/${doc.slug}`}
+        link={`/${category.toLowerCase()}/${doc.slug}`}
         reversed={index % 2 === 0}
       />
     ))

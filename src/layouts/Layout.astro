@@ -50,7 +50,7 @@ const cta = 'Contact Us';
     <title>{title ? `${title} - ${websiteName}` : websiteName}</title>
     <ViewTransitions />
   </head>
-  <body>
+  <body class="bg-ltbg2 dark:bg-dkbg2">
     <Header
       title={websiteName}
       navs={navs.filter((nav) => nav.link !== '/')}
@@ -67,6 +67,7 @@ const cta = 'Contact Us';
       navs={navs}
       phone={phone}
       socials={socials}
+      client:idle
     />
   </body>
 </html>

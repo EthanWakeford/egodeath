@@ -55,7 +55,7 @@ const Header: React.FC<HeaderProps> = ({ title, navs }) => {
       </nav>
       <div
         onClick={toggleNav}
-        className={`flex items-center justify-center z-50 w-10 cursor-pointer text-2xl text-black transition-transform duration-300 lg:hidden dark:text-white ${isNavOpen ? 'fa-xmark rotate-180 opacity-100' : 'fa-bars rotate-0 opacity-50'}`}
+        className={`flex items-center justify-center z-50 w-10 cursor-pointer text-2xl text-black transition-transform duration-300 lg:hidden dark:text-white ${isNavOpen ? 'rotate-180 opacity-100' : 'rotate-0 opacity-50'}`}
       >
         {isNavOpen ? <Icon icon={closeIcon} /> : <Icon icon={menuIcon} />}
       </div>
