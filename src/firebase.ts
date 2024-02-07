@@ -28,7 +28,7 @@ export const getData = async (collectionName: string, category?: string): Promis
 
   const snapshot = await getDocs(q);
   const data = snapshot.docs.map(doc => doc.data());
-  // console.log(data);
+  console.log(data);
 
   return data;
 };

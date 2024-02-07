@@ -20,7 +20,10 @@ export default {
         ltbg2: '#e5e5e5',
       },
       height: {
-        '1/2vh': '50vh',
+        '3/4vh': '75vh',
+      },
+      transitionDuration: {
+        '2000': '2000ms',
       },
     },
   },
