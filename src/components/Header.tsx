@@ -35,7 +35,7 @@ const Header: React.FC<HeaderProps> = ({ title, navs }) => {
 
   return (
     <header
-      className={`fixed top-0 z-40 flex w-screen justify-between px-4 py-2 text-center align-middle shadow-2xl transition-all duration-1000 lg:grid lg:grid-cols-5 lg:px-0 lg:py-2 ${isScrolled ? 'bg-opacity-100' : 'bg-opacity-50 dark:bg-opacity-50'} bg-ltbg1 lg:hover:bg-opacity-100 dark:bg-dkbg1`}
+      className={`fixed top-0 z-40 flex w-screen justify-between px-4 py-2 text-center align-middle shadow-2xl transition-all duration-1000 lg:grid lg:grid-cols-5 lg:px-0 lg:py-2 ${isScrolled ? 'bg-opacity-100' : 'bg-opacity-100 dark:bg-opacity-100'} bg-ltbg1 lg:hover:bg-opacity-100 dark:bg-dkbg1`}
     >
       <div className='items-center justify-center align-middle lg:col-span-1 lg:flex'>
         <h2 className='text-center text-2xl text-black transition-all duration-300 hover:text-accent dark:text-white'>
